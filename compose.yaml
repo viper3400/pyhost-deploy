@@ -1,0 +1,9 @@
+services:
+  pyhost:
+    build: .
+    container_name: pyhost
+    restart: unless-stopped
+    ports:
+      - "${PYHOST_PORT:-8000}:8000"
+    volumes:
+      - ./data:/data
