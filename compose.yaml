@@ -1,0 +1,12 @@
+services:
+  pyhost:
+    build: .
+    container_name: pyhost
+    restart: unless-stopped
+    ports:
+      - "${PYHOST_PORT:-8000}:8000"
+    environment:
+      # Set this to the reverse proxy's source IP/network in .env.
+      - PYHOST_FORWARDED_ALLOW_IPS=${PYHOST_FORWARDED_ALLOW_IPS:-127.0.0.1}
+    volumes:
+      - ./data:/data
