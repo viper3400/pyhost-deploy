@@ -31,9 +31,10 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ghcr.io/${{ github.repository }}
+          # Use semantic release tags (e.g. v0.2.0); prereleases contain a hyphen.
           tags: |
             type=ref,event=tag
-            type=raw,value=latest
+            type=raw,value=latest,enable=${{ !contains(github.ref_name, '-') }}
 
       - name: Build and publish image
         uses: docker/build-push-action@v6
