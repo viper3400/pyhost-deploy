@@ -1,8 +1,8 @@
-FROM python:3.13-slim
+FROM python:3.15-slim
 
 # Keep dependency versions in Git so each release tag records what it builds.
 ARG PYHOST_VERSION=0.1.3
-ARG FEEDVANTA_VERSION=0.5.0
+ARG FEEDVANTA_VERSION=0.6.0
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
