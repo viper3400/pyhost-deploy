@@ -28,7 +28,7 @@ jobs:
 
       - name: Generate image metadata
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: ghcr.io/${{ github.repository }}
           # Use semantic release tags (e.g. v0.2.0); prereleases contain a hyphen.
